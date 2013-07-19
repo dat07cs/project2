@@ -1,0 +1,22 @@
+<h1>User list</h1>
+
+<p>
+    Download:
+    <%= link_to "CSV", users_path(format: "csv") %>
+    <%= link_to "Excel", users_path(format: "xls") %>
+</p>
+
+<table border="black solid 1px" style="text-align: center;">
+  <tr>
+    <th style="width: 50px;">Id</th>
+    <th style="width: 300px;">Username</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.id %></td>
+    <td><%= user.username %></td>
+<% end %>
+</table>
+
+<br />
